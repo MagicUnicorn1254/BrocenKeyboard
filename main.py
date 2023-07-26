@@ -80,6 +80,11 @@ paragraphs = [
     "Blackburn died in April 1st 2008."
 ]
 
+keymap = {} #empty dictionary to keymap
+def initializeKeymap():
+    for i in range(256):
+        keymap[chr(i)] = chr(i)
+
 def displayWelcomeBlurb():
     print("Welcome to Broken Keyboard!")
     print("This game will test your typing skills and quick-thinking while challenging your memory. Have fun!")
@@ -105,13 +110,14 @@ def showRandomDiagnosticParagraph():
 
 #Main Code:
 def main():
+    initializeKeymap()
     displayWelcomeBlurb()
     sleep(8)
     showInstructions()
     showRandomDiagnosticParagraph()
-    char = msvcrt.getch()
+    char = msvcrt.getch().decode("utf-8")
     sleep(3)
-    print(char)
+    print(keymap[char])
 
 if __name__ == "__main__":
     main()

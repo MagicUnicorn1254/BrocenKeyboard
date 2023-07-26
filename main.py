@@ -41,7 +41,7 @@ paragraphs = [
     "sign is the dog. Despite being the best friend of humans, Chinese\n"
     "people use them for performing rituals and traditions. Dogs have been\n"
     "the second most important domesticated animal in Egyptian history. In\n"
-    "ancient Egyptian culture, it was an importanttradition to bury the dog\n"
+    "ancient Egyptian culture, it was an important tradition to bury the dog\n"
     "with his master after his death. Even in Zoroastrianism,dogs are the\n"
     "cleanest, most honest, sacred and the most important animal.\n"
     "They especially feed dogs on the death memorial of someone.",
@@ -77,7 +77,7 @@ paragraphs = [
     "occasionally toured giving speed-typing demonstrations during her\n"
     "secretarial career. She appeared on Late Night with David Letterman\n"
     "on January 24, 1985, but felt that Letterman made a spectacle of her.\n"
-    "Blackburn died in April 2008."
+    "Blackburn died in April 1st 2008."
 ]
 
 def displayWelcomeBlurb():

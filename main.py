@@ -17,12 +17,12 @@ paragraphs = [
     "about inspirational paragraphs is that they aren't preachy or cheesy\n"
     "- they simply tell you how other people have persevered through\n"
     "their own trials and tribulations.",
-    "SpongeBob SquarePants is friendly, optimistic, and loyal.His\n"
+    "SpongeBob SquarePants is friendly, optimistic, and loyal. His\n"
     "character was based on Charlie Chaplin, Jerry Lewis, Laurel and\n"
     "Hardy, and Pee Wee Herman. He is very gullible and makes many children\n"
     "and even adults laugh at the jokes with all the years the show has\n"
-    "been on air. 'This is not your average everyday darkness.' This is...\n"
-    "ADVANCED darkness! Hey, if I close my eyes, it doesn't seem so dark.\n"
+    "been on air. 'This is not your average everyday darkness. This is...\n"
+    "ADVANCED darkness! Hey, if I close my eyes, it doesn't seem so dark.'\n"
     "This quote was said by SpongeBob in the thirty-fifth episode in the\n"
     "first season called 'Rock Bottom'. This is one of the many lines\n"
     "that made people laugh during the first year this show was on air\n"
@@ -86,7 +86,7 @@ def initializeKeymap():
         keymap[chr(i)] = chr(i)
 
 def displayWelcomeBlurb():
-    print("Welcome to Broken Keyboard!")
+    print("Welcome to Brocen Keyboard!")
     print("This game will test your typing skills and quick-thinking while challenging your memory. Have fun!")
     print("")
 

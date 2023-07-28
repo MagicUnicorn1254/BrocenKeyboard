@@ -114,8 +114,16 @@ def showRandomDiagnosticParagraph():
     print(paragraphs[paragraphIndex])
     return len(paragraphs[paragraphIndex])
 
-#def takeUserInput():
-
+def inputDiagnosticParagraph(numchars):
+    i = 0
+    while i < numchars:
+        char = msvcrt.getch().decode("utf-8")
+        print(keymap[char], end='', flush=True)
+        i = i + 1
+        if char == "\b":
+            if i > 0:
+                i = i - 2
+                print(" \b", end='', flush=True)
 
 #Main Code:
 def main():
@@ -124,16 +132,8 @@ def main():
     sleep(8)
     showInstructions()
     numchars=showRandomDiagnosticParagraph()
-    i=0
+    inputDiagnosticParagraph(numchars)
 
-    while i < numchars:
-        char = msvcrt.getch().decode("utf-8")
-        print(keymap[char], end='', flush=True)
-        i=i+1
-        if char == "\b":
-            if i>0:
-                i= i-2
-                print(" \b",end='', flush= True)
 
 if __name__ == "__main__":
     main()

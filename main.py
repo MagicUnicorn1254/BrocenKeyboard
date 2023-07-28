@@ -9,6 +9,7 @@ import time
 from random import randint
 from time import sleep
 
+
 paragraphs = [
     "There are times in life when we need a little encouragement.\n"
     "I'm sure you've been in situations where someone has given you\n"
@@ -104,6 +105,7 @@ def showRandomDiagnosticParagraph():
     print("Here is your first paragraph:")
     paragraphIndex = randint(0,6)
     print(paragraphs[paragraphIndex])
+    return len(paragraphs[paragraphIndex])
 
 #def takeUserInput():
 
@@ -114,10 +116,17 @@ def main():
     displayWelcomeBlurb()
     sleep(8)
     showInstructions()
-    showRandomDiagnosticParagraph()
-    char = msvcrt.getch().decode("utf-8")
-    sleep(3)
-    print(keymap[char])
+    numchars=showRandomDiagnosticParagraph()
+    i=0
+
+    while i < numchars:
+        char = msvcrt.getch().decode("utf-8")
+        print(keymap[char], end='', flush=True)
+        i=i+1
+        if char == "\b":
+            if i>0:
+                i= i-2
+                print(" \b",end='', flush= True)
 
 if __name__ == "__main__":
     main()

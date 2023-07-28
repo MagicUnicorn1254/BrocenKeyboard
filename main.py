@@ -51,7 +51,7 @@ paragraphs = [
     "and the way you take up things. We have heard the success stories of Edison,\n"
     "Mahatma Gandhi, Isaac Newton, Saina Nehwal, Roger Federer and so on. These\n"
     "people are among the many who have led exemplary lives and have become\n"
-    "perfect models of how hard word can bring success. They have also taught the\n"
+    "perfect models of how hard work can bring success. They have also taught the\n"
     "world that challenges and failures are nothing but stepping stones to\n"
     "attaining success and that continuous hard work will definitely pay off\n"
     "at the right time.",

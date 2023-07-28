@@ -43,7 +43,7 @@ paragraphs = [
     "Even in Zoroastrianism,dogs are the cleanest, most honest sacred and most\n"
     "important animal.",
     "Hard work will definitely pay off. History has known that hard work is an\n"
-    "an essential part of our lives. Without hard work, there is no success in\n"
+    "essential part of our lives. Without hard work, there is no success in\n"
     "life. Without hard work, there is no success in life. An idle person, who\n"
     "is seen relaxing all the time, can never achieve success. It is impossible\n"
     "to reach the height of success without hard work. People always think of\n"

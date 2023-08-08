@@ -5,10 +5,9 @@
 # show_random_diagnostic_paragraph
 
 import msvcrt
-import time
 from random import randint
 from time import sleep
-
+from time import time
 
 paragraphs = [
     "There are times in life when we need a little encouragement. I'm\n"
@@ -85,7 +84,7 @@ paragraphs = [
     "use the same finger to type a certain letter.' To quote doctoral candidate Anna\n"
     "Feit: 'We were surprised to observe that people who took a typing course,\n"
     "performed at similar average speed and accuracy, as those that taught typing\n"
-    "to themselves and only used 6 fingers on average.'"
+    "to themselves and only used 6 fingers on average.'",
 ]
 
 keymap = {} #empty dictionary to keymap
@@ -110,11 +109,15 @@ def showInstructions():
 
 def showRandomDiagnosticParagraph():
     print("Here is your first paragraph:")
-    paragraphIndex = randint(0,6)
+    paragraphIndex = randint(0,len(paragraphs)-1)
+    print(paragraphIndex)
+    print(len(paragraphs))
     print(paragraphs[paragraphIndex])
-    return len(paragraphs[paragraphIndex])
+    return (len(paragraphs[paragraphIndex]), paragraphs[paragraphIndex].count(" ")+paragraphs[paragraphIndex].count("\n")+1)
+
 
 def inputDiagnosticParagraph(numchars):
+    start = time()
     i = 0
     while i < numchars:
         char = msvcrt.getch().decode("utf-8")
@@ -124,6 +127,9 @@ def inputDiagnosticParagraph(numchars):
             if i > 0:
                 i = i - 2
                 print(" \b", end='', flush=True)
+    end = time()
+    print("\n")
+    return end - start
 
 #Main Code:
 def main():
@@ -131,14 +137,15 @@ def main():
     displayWelcomeBlurb()
     sleep(8)
     showInstructions()
-    numchars=showRandomDiagnosticParagraph()
-    inputDiagnosticParagraph(numchars)
+    (numchars, numwords) = showRandomDiagnosticParagraph()
+    duration = inputDiagnosticParagraph(numchars)
+    print("That took you {} seconds to type {}.".format(duration, numwords))
 
 
 if __name__ == "__main__":
     main()
 
 
-# clear the keyboard buffer
-#while msvcrt.kbhit():
-#    msvcrt.getch()
+
+
+

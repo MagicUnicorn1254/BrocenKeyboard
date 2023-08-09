@@ -15,7 +15,7 @@ paragraphs = [
     "lift up your spirits. When you are feeling down, these inspirational\n"
     "paragraphs can be a great pick-me-up. The best thing about inspirational\n"
     "paragraphs is that they aren't preachy or cheesy - they simply tell you\n"
-    "how other people have persevered through their own trials and tribulations",
+    "how other people have persevered through their own trials and tribulations.",
     "SpongeBob SquarePants is friendly, optimistic, and loyal. His character\n"
     "was based on Charlie Chaplin, Jerry Lewis, Laurel and Hardy, and Pee\n"
     "Wee Herman. He is very gullible and makes many children and even adults\n"

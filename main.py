@@ -129,7 +129,7 @@ def inputDiagnosticParagraph(numchars):
                 print(" \b", end='', flush=True)
     end = time()
     print("\n")
-    return end - start
+    return (end - start)/60
 
 #Main Code:
 def main():
@@ -139,13 +139,8 @@ def main():
     showInstructions()
     (numchars, numwords) = showRandomDiagnosticParagraph()
     duration = inputDiagnosticParagraph(numchars)
-    print("That took you {} seconds to type {}.".format(duration, numwords))
+    print("Your average typing speed was {} wpm.".format(round(numwords/duration,1)))
 
 
 if __name__ == "__main__":
     main()
-
-
-
-
-

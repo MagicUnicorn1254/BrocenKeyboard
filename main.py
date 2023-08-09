@@ -134,9 +134,9 @@ def inputDiagnosticParagraph(numchars):
 #Main Code:
 def main():
     initializeKeymap()
-    displayWelcomeBlurb()
-    sleep(8)
-    showInstructions()
+    #displayWelcomeBlurb()
+    #sleep(8)
+    #showInstructions()
     (numchars, numwords) = showRandomDiagnosticParagraph()
     duration = inputDiagnosticParagraph(numchars)
     print("Your average typing speed was {} wpm.".format(round(numwords/duration,1)))

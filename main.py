@@ -34,12 +34,12 @@ paragraphs = [
     "by his proper name: Voldemort.' Professor McGonagall flinched, but Dumbledore,\n"
     "who was unsticking two sherbet lemons, seemed not to notice.",
     "In Hinduism, dogs are a representative of the deity 'Bhirav'. Hinduism \n"
-    "worships dogs especially for their honesty, loyalty and the ability of\n"
+    "worships dogs especially for their honesty, loyalty, and the ability of\n"
     "protection. Among the 12 zodiac signs in Chinese tradition, one zodiac\n"
     "sign is the dog. Dogs have been the second most important domesticated\n"
     "animal in Egyptian history. In ancient Egyption culture, it was an\n"
     "important tradition to bury the dog with his master after his death.\n"
-    "Even in Zoroastrianism,dogs are the cleanest, most honest sacred and most\n"
+    "Even in Zoroastrianism, dogs are the cleanest, most honest, sacred, and most\n"
     "important animal.",
     "Hard work will definitely pay off. History has known that hard work is an\n"
     "essential part of our lives. Without hard work, there is no success in\n"
@@ -48,7 +48,7 @@ paragraphs = [
     "to reach the height of success without hard work. People always think of\n"
     "shortcuts, but there is no shortcut in life. Everything depends on hard work\n"
     "and the way you take up things. We have heard the success stories of Edison,\n"
-    "Mahatma Gandhi, Isaac Newton, Saina Nehwal, Roger Federer and so on. These\n"
+    "Mahatma Gandhi, Isaac Newton, Saina Nehwal, Roger Federer, and so on. These\n"
     "people are among the many who have led exemplary lives and have become\n"
     "perfect models of how hard work can bring success. They have also taught the\n"
     "world that challenges and failures are nothing but stepping stones to\n"

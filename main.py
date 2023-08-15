@@ -146,9 +146,12 @@ def main():
     displayWelcomeBlurb()
     sleep(8)
     showInstructions()
-    (numwords, index) = showRandomDiagnosticParagraph()
-    (duration, accuracy, realAccuracy) = inputDiagnosticParagraph(index)
-    print("Your average typing speed was {} wpm and your accuracy was {}%, but your real accuracy was {}%.".format(round(numwords/duration,1), round(accuracy,0), round(realAccuracy,0)))
+    playAgain = True
+    while playAgain:
+        (numwords, index) = showRandomDiagnosticParagraph()
+        (duration, accuracy, realAccuracy) = inputDiagnosticParagraph(index)
+        print("Your average typing speed was {} wpm and your accuracy was {}%, but your real accuracy was {}%.".format(round(numwords/duration,1), round(accuracy,0), round(realAccuracy,0)))
+        playAgain = input("Would you like to play again? (y/n) ") == "y"
 
 if __name__ == "__main__":
     main()

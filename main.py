@@ -138,7 +138,7 @@ def inputDiagnosticParagraph(index):
                 mistakes = mistakes - 1
     end = time()
     print("\n")
-    return ((end - start)/60, mistakes, realMistakes)
+    return ((end - start)/60, 100 - mistakes/(len(diagnosticParagraph))*100, 100 - realMistakes/(len(diagnosticParagraph))*100)
 
 #Main Code:
 def main():
@@ -147,8 +147,8 @@ def main():
     sleep(8)
     showInstructions()
     (numwords, index) = showRandomDiagnosticParagraph()
-    (duration, mistakes, realMistakes) = inputDiagnosticParagraph(index)
-    print("Your average typing speed was {} wpm and you made {} mistakes but you really made {} mistakes.".format(round(numwords/duration,1), mistakes, realMistakes))
+    (duration, accuracy, realAccuracy) = inputDiagnosticParagraph(index)
+    print("Your average typing speed was {} wpm and your accuracy was {}%, but your real accuracy was {}%.".format(round(numwords/duration,1), round(accuracy,0), round(realAccuracy,0)))
 
 if __name__ == "__main__":
     main()

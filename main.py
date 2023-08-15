@@ -110,37 +110,45 @@ def showInstructions():
 def showRandomDiagnosticParagraph():
     print("Here is your first paragraph:")
     paragraphIndex = randint(0,len(paragraphs)-1)
-    print(paragraphIndex)
-    print(len(paragraphs))
     print(paragraphs[paragraphIndex])
-    return (len(paragraphs[paragraphIndex]), paragraphs[paragraphIndex].count(" ")+paragraphs[paragraphIndex].count("\n")+1)
+    return (paragraphs[paragraphIndex].count(" ")+paragraphs[paragraphIndex].count("\n")+1, paragraphIndex)
 
 
-def inputDiagnosticParagraph(numchars):
+def inputDiagnosticParagraph(index):
     start = time()
     i = 0
-    while i < numchars:
-        char = msvcrt.getch().decode("utf-8")
-        print(keymap[char], end='', flush=True)
-        i = i + 1
-        if char == "\b":
-            if i > 0:
-                i = i - 2
-                print(" \b", end='', flush=True)
+    realMistakes = 0
+    mistakes = 0
+    diagnosticParagraph = paragraphs[index]
+    userParagraph = [None]*len(diagnosticParagraph)
+    backspace = '\b'
+    while i < len(diagnosticParagraph):
+        char = keymap[msvcrt.getch().decode("utf-8")]
+        if char != backspace:  # user typed non-backspace character
+            userParagraph[i] = char
+            if char != diagnosticParagraph[i]:
+                mistakes = mistakes + 1
+                realMistakes = realMistakes + 1
+            print(char, end='', flush=True)
+            i = i + 1
+        elif i > 0:  # user typed backspace and wasn't at the very beginning of the paragraph
+            i = i - 1
+            print('\b \b', end='', flush=True)
+            if userParagraph[i] != diagnosticParagraph[i]:
+                mistakes = mistakes - 1
     end = time()
     print("\n")
-    return (end - start)/60
+    return ((end - start)/60, mistakes, realMistakes)
 
 #Main Code:
 def main():
     initializeKeymap()
-    #displayWelcomeBlurb()
-    #sleep(8)
-    #showInstructions()
-    (numchars, numwords) = showRandomDiagnosticParagraph()
-    duration = inputDiagnosticParagraph(numchars)
-    print("Your average typing speed was {} wpm.".format(round(numwords/duration,1)))
-
+    displayWelcomeBlurb()
+    sleep(8)
+    showInstructions()
+    (numwords, index) = showRandomDiagnosticParagraph()
+    (duration, mistakes, realMistakes) = inputDiagnosticParagraph(index)
+    print("Your average typing speed was {} wpm and you made {} mistakes but you really made {} mistakes.".format(round(numwords/duration,1), mistakes, realMistakes))
 
 if __name__ == "__main__":
     main()

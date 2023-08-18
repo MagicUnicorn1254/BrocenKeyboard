@@ -143,15 +143,32 @@ def inputDiagnosticParagraph(index):
 #Main Code:
 def main():
     initializeKeymap()
-    displayWelcomeBlurb()
-    sleep(8)
-    showInstructions()
+    #displayWelcomeBlurb()
+    #sleep(8)
+    #showInstructions()
     playAgain = True
     while playAgain:
         (numwords, index) = showRandomDiagnosticParagraph()
         (duration, accuracy, realAccuracy) = inputDiagnosticParagraph(index)
         print("Your average typing speed was {} wpm and your accuracy was {}%, but your real accuracy was {}%.".format(round(numwords/duration,1), round(accuracy,0), round(realAccuracy,0)))
-        playAgain = input("Would you like to play again? (y/n) ") == "y"
+        playAgain = input("Would you like to try again (1), level up (2), or quit (3)? Please press enter after your answer. ")
+        #playAgain is not working... constantly showing "that is not an answer" etc. - why?
+        while playAgain != "1" or "2" or "3":
+            print("That's not an answer...")
+            input("Would you like to play again (1), level up (2), or quit (3)? Please press enter after your answer. ")
+        if playAgain == "1":
+            print("Okay, good luck!")
+            return True
+        elif playAgain == "2":        #continue to next level (switch keys)
+            print("Gonna get trickier!")
+            return False
+        else:
+            print("Thanks for playing! Have a great day/evening!")
+            break
+
+
+
+
 
 if __name__ == "__main__":
     main()

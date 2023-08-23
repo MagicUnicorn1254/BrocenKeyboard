@@ -143,9 +143,9 @@ def inputDiagnosticParagraph(index):
 #Main Code:
 def main():
     initializeKeymap()
-    #displayWelcomeBlurb()
-    #sleep(8)
-    #showInstructions()
+    displayWelcomeBlurb()
+    sleep(8)
+    showInstructions()
     playAgain = True
     while playAgain:
         (numwords, index) = showRandomDiagnosticParagraph()

@@ -156,15 +156,17 @@ def inputDiagnosticParagraph(index):
     print("\n")
     return ((end - start)/60, 100 - mistakes/(len(diagnosticParagraph))*100, 100 - realMistakes/(len(diagnosticParagraph))*100)
 
-keymap = {}
-def initializeKeymap(): #how do we randomize the swapping letters and tell the user as well?
-    for i in range(256):
-        keymap[chr(i)] = chr(i)
+def pickRandomCharacter():
+    return chr(randint(33, 126))
 
 def levelingUp():
-    keymap['a'] = 'b'
-    keymap['b'] = 'a'
-    print("a and b have been swapped! Gooooood luck!")
+    firstCharacter = pickRandomCharacter()
+    secondCharacter = pickRandomCharacter()
+    while firstCharacter == secondCharacter:
+        secondCharacter = pickRandomCharacter()
+    keymap[firstCharacter] = secondCharacter
+    keymap[secondCharacter] = firstCharacter
+    print("{} and {} have been swapped! Gooooood luck!".format(firstCharacter, secondCharacter))
 
 #Main Code:
 def main():

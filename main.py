@@ -9,6 +9,23 @@ from random import randint
 from time import sleep
 from time import time
 
+def validOption(playAgainInput):
+    return (playAgainInput >= 1) and (playAgainInput <= 3)
+
+def playAgain():
+    print("Do you want to play again (1), level up (2), or quit (3)? ")
+    playAgainInput = int(input("Please press enter afterwards: "))
+    while not validOption(playAgainInput):
+        print("That's not an answer...")
+        playAgainInput = input("Do you want to play again (1), level up (2), or quit (3)? ")
+    if playAgainInput == 1:
+        print("Alrighty, good luck!")
+    elif playAgainInput == 2:
+        print("Next level here we come!")
+    elif playAgainInput == 3:
+        print("Thanks for playing! Bye!")
+    return playAgainInput
+
 paragraphs = [
     "There are times in life when we need a little encouragement. I'm\n"
     "sure you've been in situations where someone has given you words to\n"
@@ -113,7 +130,6 @@ def showRandomDiagnosticParagraph():
     print(paragraphs[paragraphIndex])
     return (paragraphs[paragraphIndex].count(" ")+paragraphs[paragraphIndex].count("\n")+1, paragraphIndex)
 
-
 def inputDiagnosticParagraph(index):
     start = time()
     i = 0
@@ -140,35 +156,34 @@ def inputDiagnosticParagraph(index):
     print("\n")
     return ((end - start)/60, 100 - mistakes/(len(diagnosticParagraph))*100, 100 - realMistakes/(len(diagnosticParagraph))*100)
 
+keymap = {}
+def initializeKeymap(): #how do we randomize the swapping letters and tell the user as well?
+    for i in range(256):
+        keymap[chr(i)] = chr(i)
+
+def levelingUp():
+    keymap['a'] = 'b'
+    keymap['b'] = 'a'
+    print("a and b have been swapped! Gooooood luck!")
+
 #Main Code:
 def main():
     initializeKeymap()
     displayWelcomeBlurb()
     sleep(8)
     showInstructions()
-    playAgain = True
-    while playAgain:
+    while True:
         (numwords, index) = showRandomDiagnosticParagraph()
         (duration, accuracy, realAccuracy) = inputDiagnosticParagraph(index)
         print("Your average typing speed was {} wpm and your accuracy was {}%, but your real accuracy was {}%.".format(round(numwords/duration,1), round(accuracy,0), round(realAccuracy,0)))
-        playAgain = input("Would you like to try again (1), level up (2), or quit (3)? Please press enter after your answer. ")
-        #playAgain is not working... constantly showing "that is not an answer" etc. - why?
-        while playAgain != "1" or "2" or "3":
-            print("That's not an answer...")
-            input("Would you like to play again (1), level up (2), or quit (3)? Please press enter after your answer. ")
-        if playAgain == "1":
-            print("Okay, good luck!")
-            return True
-        elif playAgain == "2":        #continue to next level (switch keys)
-            print("Gonna get trickier!")
-            return False
+        againQuit = playAgain()
+        if againQuit == 1:
+            print("Next Paragraph")
+        elif againQuit == 2:
+            print("Next level!")
+            levelingUp()
         else:
-            print("Thanks for playing! Have a great day/evening!")
             break
-
-
-
-
 
 if __name__ == "__main__":
     main()
